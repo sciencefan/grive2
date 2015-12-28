@@ -26,11 +26,12 @@
 
 #if FILEWATCHER_PLATFORM == FILEWATCHER_PLATFORM_LINUX
 
-#include <sys/stat.h>
 #include <fcntl.h>
 #include <string.h>
 #include <stdio.h>
 #include <errno.h>
+#include <unistd.h>
+#include <sys/stat.h>
 #include <sys/inotify.h>
 
 #define BUFF_SIZE ((sizeof(struct inotify_event)+FILENAME_MAX)*1024)

@@ -62,6 +62,10 @@ file (GLOB XML_HEADERS
     ${libgrive_SOURCE_DIR}/src/xml/*.hh
 )
 
+file (GLOB FILEWATCHER_HEADERS
+    ${libgrive_SOURCE_DIR}/src/filewatcher/*.hh
+)
+
 file (GLOB LIBGRIVE_SRC
 	src/base/*.cc
 	src/drive/*.cc
@@ -72,6 +76,7 @@ file (GLOB LIBGRIVE_SRC
 	src/util/*.cc
 	src/util/log/*.cc
 	src/xml/*.cc
+	src/filewatcher/*.cc
 )
 
 add_definitions(

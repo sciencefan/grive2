@@ -40,6 +40,7 @@ add_executable( grive_deamon
 
 target_link_libraries(grive_deamon
 	${Boost_LIBRARIES}
+	grive
 )
 
 set_target_properties( grive_deamon

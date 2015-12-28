@@ -24,17 +24,19 @@
 
 #include "FileWatcherImpl.hh"
 
-
-#if GRIVE_PLATEFORM == 'Win'
+/*
+#if GRIVE_PLATEFORM == GRIVE_PLATEFORM_WIN
 #       include <FileWatcherWin32.h>
 #       define FILEWATCHER_IMPL FileWatcherWin32
-#elif GRIVE_PLATEFORM == 'Mac'
+#elif GRIVE_PLATEFORM == GRIVE_PLATEFORM_MAC
 #       include <FileWatcherOSX.h>
 #       define FILEWATCHER_IMPL FileWatcherOSX
-#elif GRIVE_PLATEFORM == 'Linux'
+#elif GRIVE_PLATEFORM == GRIVE_PLATEFORM_LINUX
 #       include <FileWatcherLinux.h>
 #       define FILEWATCHER_IMPL FileWatcherLinux
-#endif
+#endif*/
+#       include "FileWatcherLinux.hh"
+#       define FILEWATCHER_IMPL FileWatcherLinux
 
 namespace gr { namespace fw {
 
