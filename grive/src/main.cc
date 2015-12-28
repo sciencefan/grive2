@@ -195,15 +195,22 @@ int Main( int argc, char **argv )
 	v2::Syncer2 syncer( &agent );
 
 	Drive drive( &syncer, config.GetAll() ) ;
+	Log("*** Detect change", log::debug) ;
 	drive.DetectChanges() ;
 
 	if ( vm.count( "dry-run" ) == 0 )
 	{
+		Log("*** Update", log::debug) ;
 		drive.Update() ;
+		Log("*** Save state", log::debug) ;
 		drive.SaveState() ;
 	}
 	else
+	{
+		Log("*** Save state", log::debug) ;
 		drive.DryRun() ;
+	}
+
 		
 	if ( vm.count ( "move" ) > 0 && vm.count( "dry-run" ) == 0 )
 	{
