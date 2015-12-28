@@ -9,7 +9,7 @@ include_directories(
 )
 
 file (GLOB GRIVE_EXE_SRC
-	${grive_SOURCE_DIR}/src/*.cc
+	${grive_SOURCE_DIR}/src/main.cc
 )
 
 add_executable( grive_executable
@@ -27,3 +27,23 @@ set_target_properties( grive_executable
 
 install(TARGETS grive_executable RUNTIME DESTINATION bin)
 install(FILES doc/grive.1 DESTINATION share/man/man1 )
+
+
+
+
+file (GLOB GRIVE_DEAMON_SRC
+	${grive_SOURCE_DIR}/src/main_deamon.cc
+)
+add_executable( grive_deamon
+	${GRIVE_DEAMON_SRC}
+)
+
+target_link_libraries(grive_deamon
+	${Boost_LIBRARIES}
+)
+
+set_target_properties( grive_deamon
+	PROPERTIES OUTPUT_NAME grived
+)
+
+install(TARGETS grive_deamon RUNTIME DESTINATION bin)
